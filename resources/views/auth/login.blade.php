@@ -47,7 +47,7 @@
 
     <body class="bg-video">
         <video autoplay playsinline muted loop id="video-background">
-            <source src="{{ asset('images/background.mp4') }}" type="video/mp4">
+            <source src="https://videos.pexels.com/video-files/2022396/2022396-hd_1920_1080_30fps.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <!-- Preloader -->
