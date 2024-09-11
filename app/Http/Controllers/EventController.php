@@ -908,6 +908,8 @@ class EventController extends Controller
                 'error' => 'Event not found'
             ], 500);
         }
+
+        dd($event);
         
         if ($event->flag_started === null) {
             return response()->json([
