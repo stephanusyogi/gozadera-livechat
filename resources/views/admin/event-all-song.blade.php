@@ -379,6 +379,8 @@
 
     <script>
         $(document).ready(function() {
+            var toggleState = $('#toggle').is(':checked');
+
             var pusher = new Pusher('{{ env('PUSHER_APP_KEY') }}', {
                 cluster: '{{ env('PUSHER_APP_CLUSTER') }}',
                 forceTLS: true
@@ -407,6 +409,7 @@
                 data.songRequests.forEach(function(songRequest, index) {
                     renderSongRequest(songRequest, index);
                 });
+                $('#toggle').prop('checked', toggleState);
             });
 
             // Function to fetch song requests from the server
@@ -432,6 +435,7 @@
                             response.songRequests.forEach(function(songRequest, index) {
                                 renderSongRequest(songRequest, index);
                             });
+                            $('#toggle').prop('checked', toggleState);
                         }
                     },
                     error: function() {
