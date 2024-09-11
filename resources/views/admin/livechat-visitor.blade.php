@@ -554,13 +554,12 @@
                     _token: "{{ csrf_token() }}" // Add CSRF token if necessary
                 },
                 success: function(response) {
-                    showAlert(response, 'info');
-                    // if (response.status) {
-                    //     showAlert('Your song request has been submitted successfully.', 'info');
-                    // }
+                    if (response.status) {
+                        showAlert('Your song request has been submitted successfully.', 'info');
+                    }
                 },
                 error: function(err) {
-                    showAlert(err, 'error');
+                    alert('Error: ' + JSON.stringify(err));
                     // showAlert('An error occurred while submitting your request.', 'error');
                 }
             });
