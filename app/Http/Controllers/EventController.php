@@ -890,7 +890,7 @@ class EventController extends Controller
         // Validate the request
         $validator = Validator::make($request->all(), [
             'sender_name' => 'required|string|max:20',
-            'sender_email' => 'required|string|max:20',
+            'sender_email' => 'required|string',
             'song_name' => 'required|string',
             'artist_name' => 'required|string',
         ]);

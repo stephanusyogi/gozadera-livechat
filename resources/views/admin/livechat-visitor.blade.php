@@ -559,8 +559,7 @@
                     }
                 },
                 error: function(err) {
-                    alert('Error: ' + JSON.stringify(err));
-                    // showAlert('An error occurred while submitting your request.', 'error');
+                    showAlert('An error occurred while submitting your request.', 'error');
                 }
             });
         }
