@@ -788,8 +788,8 @@ class EventController extends Controller
 
         
         if (request()->ajax()) {
-            $table = Messages::orderBy('created_at', 'desc')->get();
-            return DataTables::of($table)
+            $messages = Messages::where('id_event', $id)->orderBy('created_at', 'asc')->get();
+            return DataTables::of($messages)
                 ->addIndexColumn()
                 ->addColumn('action', function ($item) {
                     $action = '
