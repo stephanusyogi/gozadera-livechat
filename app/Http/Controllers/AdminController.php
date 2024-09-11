@@ -100,7 +100,6 @@ class AdminController extends Controller
         $new_admin->type = $request->type;
         $new_admin->password = Hash::make($request->password);
         $new_admin->created_by = $logged_admin->username;
-        $new_admin->updated_by = $logged_admin->username;
         $new_admin->save();
 
         return redirect('all-administrator')->with([
@@ -148,7 +147,6 @@ class AdminController extends Controller
             $update_admin->password = Hash::make($request->password);
         }
         $update_admin->type = $request->type;
-        $update_admin->updated_by = $admin->username;
         $update_admin->save();
 
         return redirect('all-administrator')->with([

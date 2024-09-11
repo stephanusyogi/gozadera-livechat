@@ -26,7 +26,6 @@ class Administrator extends Authenticatable  // This is correct for authenticati
         'password',
         'type',
         'created_by',
-        'updated_by',
     ];
 
     /**
