@@ -592,6 +592,15 @@ class EventController extends Controller
             ]);
         }
 
+        // If Already have session senderEmail but the event is using table security and the visitor doesnt have session senderTable
+        if ($event->flag_table_security && $event->flag_table_security !== null) {
+            if(!$request->session()->has('senderTable')){
+                return redirect()->route('all-event.livechat-visitor-onboard', $id)->with([
+                    'error_flash' => 'Please fill this form before start livechat.',
+                ]);
+            }
+        }
+
         return view('admin.livechat-visitor', compact('event'));
     }
 
