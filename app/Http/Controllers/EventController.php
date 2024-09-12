@@ -525,9 +525,13 @@ class EventController extends Controller
 
         // Check if already onboard
         if ($request->session()->has('senderEmail')) {
-            return redirect()->route('all-event.livechat-visitor', $id)->with([
-                'error_flash' => 'Event Not Started Yet',
-            ]);
+            if ($event->flag_table_security) {
+                if($request->session()->has('senderTable')){
+                    return redirect()->route('all-event.livechat-visitor', $id);
+                }
+            }else{
+                return redirect()->route('all-event.livechat-visitor', $id);
+            }
         }
         
         return view('admin.livechat-visitor-onboard', compact('event'));
