@@ -221,6 +221,7 @@
         margin: 0;
         font-weight: 500;
         color: var(--chat-bubble-message);
+        word-break: break-word;
     }
 
     .speech-wrapper .bubble .txt .timestamp {
