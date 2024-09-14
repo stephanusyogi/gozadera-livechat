@@ -26,10 +26,10 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard.index');
 
-    Route::post('/save-color-mode', function (Request $request) {
-        $request->session()->put('color_mode', $request->input('mode')); 
-        return response()->json(['success' => true]);
-    });
+    // Route::post('/save-color-mode', function (Request $request) {
+    //     $request->session()->put('color_mode', $request->input('mode')); 
+    //     return response()->json(['success' => true]);
+    // });
 
     Route::get('/all-administrator', [AdminController::class, 'all'])->name('all-administrator');
     Route::get('/all-administrator/add', [AdminController::class, 'add'])->name('all-administrator.add');

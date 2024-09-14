@@ -40,7 +40,7 @@
             }
 
             .card-form{
-                background-color: rgb(255 255 255 / 82%);
+                background-color: rgb(12 11 11 / 82%)!important;
             }
 
         </style>
@@ -69,7 +69,7 @@
                             <img src="{{ asset('images/logo-transparent.png') }}" alt="img">
                             <h1 style="letter-spacing: 5px;color:#c88600;">Gozadera</h1>
                         </a>
-                        <p class="fs-14 text-dark my-4">Welcome back! Please login using your account.</p>
+                        <p class="fs-14 text-white my-4">Welcome back, Please login using your account.</p>
                     </div>
 
                     <div class="card-body p-0">

@@ -5,7 +5,7 @@
 
             <div class="header-right-part d-flex align-items-center flex-shrink-0">
                 <ul class="nav-elements d-flex align-items-center list-unstyled m-0 p-0">
-                    <li class="nav-item nav-color-switch d-flex align-items-center gap-3">
+                    {{-- <li class="nav-item nav-color-switch d-flex align-items-center gap-3">
                         <div class="sun"><img src="{{ asset('templates/assets/img/sun.svg') }}" alt="img"></div>
                         <div class="switch">
                             <input type="checkbox" id="colorSwitch" value="false" name="defaultMode"  {{ session('color_mode') == 'dark' ? 'checked' : '' }}>
@@ -16,7 +16,7 @@
                             </div>
                         </div>
                         <div class="moon"><img src="{{ asset('templates/assets/img/moon.svg') }}" alt="img"></div>
-                    </li>
+                    </li> --}}
                     
                     <li class="nav-item nav-author">
                         <a href="#" class="nav-toggler" data-bs-toggle="dropdown" aria-expanded="false">
