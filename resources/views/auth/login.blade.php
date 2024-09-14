@@ -45,7 +45,7 @@
 
         </style>
 
-    <body class="bg-video" style="background-image: url('{{ asset('images/auth-bg.jpg') }}')">
+    <body class="bg-video" style="background-image: url('{{ asset('images/auth-bg.jpg') }}');background-size: cover;background-position: bottom;">
         {{-- <video autoplay playsinline muted loop id="video-background">
             <source src="https://videos.pexels.com/video-files/2022396/2022396-hd_1920_1080_30fps.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -55,6 +55,7 @@
             <div class="preloader-inner">
                 <div class="spinner"></div>
                 <div class="logo"><img src="{{ asset('images/logo.jpg') }}" alt="img"></div>
+
             </div>
         </div>
         
@@ -64,11 +65,11 @@
                 <div class="card-form card rounded-2 border-0 p-5 m-0">
 
                     <div class="card-header border-0 p-0 text-center">
-                        <a href="index.html" class="w-100 d-inline-block mb-5">
+                        <a href="#" class="w-100 d-inline-block mb-5">
                             <img src="{{ asset('images/logo-transparent.png') }}" alt="img">
+                            <h1 style="letter-spacing: 5px;color:#c88600;">Gozadera</h1>
                         </a>
-                        <h3>Welcome back!</h3>
-                        <p class="fs-14 text-dark my-4">Please login using your account.</p>
+                        <p class="fs-14 text-dark my-4">Welcome back! Please login using your account.</p>
                     </div>
 
                     <div class="card-body p-0">
