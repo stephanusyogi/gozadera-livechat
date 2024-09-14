@@ -119,19 +119,19 @@
     .login__icon {
         position: absolute;
         top: 30px;
-        color: #c88600;
+        color: #312b1f;
     }
 
     .login__input {
         border: none;
-        border-bottom: 2px solid #c88600;
+        border-bottom: 2px solid #312b1f;
         background: none;
         padding: 10px;
         padding-left: 24px;
         font-weight: 700;
         width: 90%;
         transition: .2s;
-        color: #fff;
+        color: #312b1f;
     }
 
     .login__input:active,
