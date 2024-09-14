@@ -17,7 +17,7 @@
             <li class="menu-item {{ $url === '/' ? 'active' : '' }}"><a href="{{ route('dashboard.index') }}"><span class="nav-icon flex-shrink-0"><i class="bi bi-speedometer fs-18"></i></span> <span class="nav-text">Dashboard</span></a></li>
             
             <li class="menu-section-title text-gray ff-heading fs-16 fw-bold text-uppercase mt-4 mb-2"><span>Events Management</span></li>
-            <li class="menu-item {{ $url === '/all-event' ? 'active' : '' }}"><a href="{{ route('all-event') }}"><span class="nav-icon flex-shrink-0"><i class="bi bi-megaphone-fill fs-18"></i></span> <span class="nav-text">All Event</span></a></li>
+            <li class="menu-item {{ $url === '/all-event' ? 'active' : '' }}"><a href="{{ route('all-event') }}"><span class="nav-icon flex-shrink-0"><i class="bi bi-megaphone-fill fs-18"></i></span> <span class="nav-text">{{ auth()->user()->type === 'Super Admin' ? 'All Event' : 'My Event' }}</span></a></li>
             <li class="menu-item{{ $url === '/all-event/add' ? 'active' : '' }}"><a href="{{ route('all-event.add') }}"><span class="nav-icon flex-shrink-0"><i class="bi bi-plus-circle-fill fs-18"></i></span> <span class="nav-text">Create Event</span></a></li>
             
             <li class="menu-section-title text-gray ff-heading fs-16 fw-bold text-uppercase mt-4 mb-2"><span>Admin Management</span></li>                    

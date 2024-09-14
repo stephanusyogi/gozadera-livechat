@@ -23,7 +23,7 @@ class EventController extends Controller
         $url = '/all-event';
 
         if (request()->ajax()) {
-            $events = Events::withTrashed()->orderBy('updated_at', 'desc')->get();
+            $events = $admin->type === 'Super Admin' ? Events::withTrashed()->orderBy('updated_at', 'desc')->get() : Events::where('created_by', $admin->username)->withTrashed()->orderBy('updated_at', 'desc')->get();
             return DataTables::of($events)
                 ->addIndexColumn()
                 ->addColumn('action', function ($item) use ($admin) {
