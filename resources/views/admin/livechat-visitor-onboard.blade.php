@@ -39,7 +39,7 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 2rem;
-        background: linear-gradient(90deg, #c4b086, #8f6000);
+        background: linear-gradient(90deg, #bb933f, #8f6000);
         position: relative;	
         height: 600px;
         width: 360px;	
@@ -52,8 +52,7 @@
         height: 100%;
     }
 
-    .screen__background {		
-        border-radius: 10px;
+    .screen__background {	
         position: absolute;
         top: 0;
         left: 0;
@@ -73,7 +72,7 @@
     .screen__background__shape1 {
         height: 520px;
         width: 520px;
-        background: #000;	
+        background: #614406;	
         top: -50px;
         right: 120px;	
         border-radius: 0 72px 0 0;
@@ -154,7 +153,7 @@
         display: flex;
         align-items: center;
         width: 100%;
-        color: #000;
+        color: #c88600;
         box-shadow: 0px 2px 2px #6d6d6f;
         cursor: pointer;
         transition: .2s;
@@ -170,7 +169,7 @@
     .button__icon {
         font-size: 15px;
         margin-left: auto;
-        color: #000;
+        color: #c88600;
     }
 
     .social-login {	
@@ -193,7 +192,7 @@
         padding: 20px 10px;
         color: #000;
         text-decoration: none;	
-        text-shadow: 0px 0px 8px #7875B5;
+        text-shadow: 0px 0px 8px #464646;
     }
 
     .social-login__icon:hover {
