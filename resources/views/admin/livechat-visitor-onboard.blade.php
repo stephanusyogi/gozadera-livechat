@@ -28,7 +28,7 @@
     }
 
     body {
-        background: linear-gradient(185deg, #c78500, #494338);
+        background: linear-gradient(185deg, #c78500, #000);
     }
 
     .container {
@@ -53,6 +53,7 @@
     }
 
     .screen__background {		
+        border-radius: 10px;
         position: absolute;
         top: 0;
         left: 0;
@@ -72,7 +73,7 @@
     .screen__background__shape1 {
         height: 520px;
         width: 520px;
-        background: #FFF;	
+        background: #000;	
         top: -50px;
         right: 120px;	
         border-radius: 0 72px 0 0;
@@ -119,7 +120,7 @@
     .login__icon {
         position: absolute;
         top: 30px;
-        color: #7875B5;
+        color: #c88600;
     }
 
     .login__input {
@@ -131,17 +132,18 @@
         font-weight: 700;
         width: 90%;
         transition: .2s;
+        color: #fff;
     }
 
     .login__input:active,
     .login__input:focus,
     .login__input:hover {
         outline: none;
-        border-bottom-color: #6A679E;
+        border-bottom-color: #c88600;
     }
 
     .login__submit {
-        background: #fff;
+        background: #ffffffb5;
         font-size: 14px;
         margin-top: 30px;
         padding: 10px 20px;
@@ -152,7 +154,7 @@
         display: flex;
         align-items: center;
         width: 100%;
-        color: #5e5d5d;
+        color: #000;
         box-shadow: 0px 2px 2px #6d6d6f;
         cursor: pointer;
         transition: .2s;
@@ -161,14 +163,14 @@
     .login__submit:active,
     .login__submit:focus,
     .login__submit:hover {
-        border-color: #7875B5;
+        border-color: #c88600;
         outline: none;
     }
 
     .button__icon {
         font-size: 15px;
         margin-left: auto;
-        color: #5e5d5d;
+        color: #000;
     }
 
     .social-login {	
@@ -176,7 +178,7 @@
         height: 140px;
         width: 160px;
         text-align: center;
-        bottom: 0px;
+        bottom: 20px;
         right: 0px;
         color: #fff;
     }
@@ -189,7 +191,7 @@
 
     .social-login__icon {
         padding: 20px 10px;
-        color: #fff;
+        color: #000;
         text-decoration: none;	
         text-shadow: 0px 0px 8px #7875B5;
     }
@@ -266,7 +268,8 @@
                     </button>
                 </form>
                 <div class="social-login">
-                    <h3>Gozadera Indonesia</h3>
+                    <img src="https://gozaderaindonesia-livechat.my.id/images/logo-transparent.png" style="width: 30%;">
+                    <h3 style="color: #000">Gozadera Indonesia</h3>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/gozadera.id/"target="_blank"><i class="social-login__icon fab fa-instagram" ></i></a>
                         <a href="https://www.tiktok.com/@gozaderaid" target="_blank"><i class="social-login__icon fa-brands fa-tiktok"></i></a>
