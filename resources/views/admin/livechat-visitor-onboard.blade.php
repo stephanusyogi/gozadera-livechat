@@ -124,7 +124,7 @@
 
     .login__input {
         border: none;
-        border-bottom: 2px solid #D1D1D4;
+        border-bottom: 2px solid #c88600;
         background: none;
         padding: 10px;
         padding-left: 24px;
@@ -142,7 +142,7 @@
     }
 
     .login__submit {
-        background: #ffffffb5;
+        background: #000000b5;
         font-size: 14px;
         margin-top: 30px;
         padding: 10px 20px;
@@ -154,7 +154,7 @@
         align-items: center;
         width: 100%;
         color: #c88600;
-        box-shadow: 0px 2px 2px #6d6d6f;
+        box-shadow: 0px 2px 2px #c88600;
         cursor: pointer;
         transition: .2s;
     }
