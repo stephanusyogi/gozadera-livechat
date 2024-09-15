@@ -2,7 +2,7 @@
     <!-- Logo  -->
     <div class="p-0 logo d-flex align-items-center justify-content-between">
         <a href="{{ route('dashboard.index') }}" class="d-flex align-items-center gap-3 flex-shrink-0">
-            <img src="{{ asset('images/logo_text_right.jpg.png') }}" alt="logo" style="width: 20%">
+            <img src="{{ asset('images/logo-transparent.png') }}" alt="logo" style="width: 20%">
             <div class="position-relative flex-shrink-0">
                 <h4 class="logo-text mb-0 mt-1">Livechat</h4>
                 <h4 class="logo-text-white mb-0 mt-1">Livechat</h4>

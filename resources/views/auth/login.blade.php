@@ -66,7 +66,7 @@
 
                     <div class="card-header border-0 p-0 text-center">
                         <a href="#" class="w-100 d-inline-block mb-5">
-                            <img src="{{ asset('images/logo_img_text_bottom.png') }}" alt="img">
+                            <img src="{{ asset('images/logo_img_text_bottom.png') }}" alt="img" style="width: 35%">
                             {{-- <h1 style="letter-spacing: 5px;color:#c88600;">Gozadera</h1> --}}
                         </a>
                         <p class="fs-14 text-white my-4">Welcome back, Please login using your account.</p>
