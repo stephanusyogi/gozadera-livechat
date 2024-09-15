@@ -54,7 +54,7 @@
         <div id="preloader">
             <div class="preloader-inner">
                 <div class="spinner"></div>
-                <div class="logo"><img src="{{ asset('images/logo.jpg') }}" alt="img"></div>
+                <div class="logo"><img src="{{ asset('images/logo_img_text_bottom.png') }}" alt="img"></div>
 
             </div>
         </div>
