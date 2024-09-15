@@ -9,7 +9,7 @@
         <meta name="description" content="Gozadera Indonesia Livechat">
 
         <!-- Favicon and touch Icons -->
-        <link href="{{ asset('images/logo-transparent.png') }}" rel="shortcut icon" type="image/png">
+        <link href="{{ asset('images/logo_img_text_bottom.png') }}" rel="shortcut icon" type="image/png">
 
         <!-- Page Title -->
         <title>Gozadera - Livechat</title>
