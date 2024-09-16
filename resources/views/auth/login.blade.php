@@ -48,6 +48,7 @@
     <body class="bg-video">
         <iframe id="video-background" src="https://drive.google.com/file/d/13eFx1_Y-zZhBJdfY4vfPvMFvYmEcI9Lr/preview?autoplay=1" width="640" height="360" allow="autoplay; muted" frameborder="0" allowfullscreen></iframe>
         <!-- Preloader -->
+        <!-- Preloader -->
         <div id="preloader">
             <div class="preloader-inner">
                 <div class="spinner"></div>
