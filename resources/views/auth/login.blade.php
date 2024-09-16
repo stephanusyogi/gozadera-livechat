@@ -45,11 +45,12 @@
 
         </style>
 
-    <body class="bg-video" style="background-image: url('{{ asset('images/auth-bg.jpg') }}');background-size: cover;background-position: bottom;">
-        {{-- <video autoplay playsinline muted loop id="video-background">
-            <source src="https://videos.pexels.com/video-files/2022396/2022396-hd_1920_1080_30fps.mp4" type="video/mp4">
+    <body class="bg-video">
+        {{-- <body class="bg-video" style="background-image: url('{{ asset('images/auth-bg.jpg') }}');background-size: cover;background-position: bottom;"> --}}
+        <video autoplay playsinline muted loop id="video-background">
+            <source src="https://drive.google.com/uc?export=download&id=13eFx1_Y-zZhBJdfY4vfPvMFvYmEcI9Lr" type="video/mp4">
             Your browser does not support the video tag.
-        </video> --}}
+        </video>
         <!-- Preloader -->
         <div id="preloader">
             <div class="preloader-inner">
