@@ -46,8 +46,9 @@
         </style>
 
     <body class="bg-video">
-        <iframe id="video-background" src="https://drive.google.com/file/d/13eFx1_Y-zZhBJdfY4vfPvMFvYmEcI9Lr/preview?autoplay=1" width="640" height="360" allow="autoplay; muted" frameborder="0" allowfullscreen></iframe>
-        <!-- Preloader -->
+        {{-- <body class="bg-video" style="background-image: url('{{ asset('images/auth-bg.jpg') }}');background-size: cover;background-position: bottom;"> --}}
+        <iframe id="video-background" src="https://www.youtube.com/embed/pwzXtFQV3eg?autoplay=1&mute=1&loop=1&playlist=pwzXtFQV3eg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>            
         <!-- Preloader -->
         <div id="preloader">
             <div class="preloader-inner">
