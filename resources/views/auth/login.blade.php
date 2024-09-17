@@ -44,11 +44,10 @@
             }
 
         </style>
-
     <body class="bg-video">
         {{-- <body class="bg-video" style="background-image: url('{{ asset('images/auth-bg.jpg') }}');background-size: cover;background-position: bottom;"> --}}
         <video autoplay playsinline muted loop id="video-background">
-            <source src="https://www.youtube.com/embed/pwzXtFQV3eg?autoplay=1&mute=1&loop=1" type="video/mp4">
+            <source src="https://jumpshare.com/embed/GiSCcIm23fAHlJjjvbj6" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         {{-- <iframe id="video-background" src="https://www.youtube.com/embed/pwzXtFQV3eg?autoplay=1&mute=1&loop=1&playlist=pwzXtFQV3eg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen> --}}
