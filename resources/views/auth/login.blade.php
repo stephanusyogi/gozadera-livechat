@@ -46,7 +46,7 @@
         </style>
 
     
-    <body class="bg-video" style="background-image: url('{{ asset('images/auth-bg.jpg') }}');background-size: cover;background-position: bottom;">
+    <body class="bg-video" style="background-image: url('{{ asset('images/bg-login.jpg') }}');background-size: cover;background-position: bottom;">
         <!-- Preloader -->
         <div id="preloader">
             <div class="preloader-inner">
