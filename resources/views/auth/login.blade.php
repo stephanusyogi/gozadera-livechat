@@ -40,7 +40,15 @@
             }
 
             .card-form{
-                background-color: rgb(12 11 11 / 82%)!important;
+                background-color: rgb(47 47 47 / 79%) !important;
+            }
+
+            .btn-dark{
+                background: transparent!important;
+            }
+            
+            .btn-dark:hover{
+                background: #202020!important;
             }
 
         </style>
