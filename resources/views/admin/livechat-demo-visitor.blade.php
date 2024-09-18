@@ -447,9 +447,7 @@
             </div>
             <div class="chat__conversation-panel__container information">
                 <p>
-                    "Let's keep the vibes positive and the conversation uplifting.
-                    <br />Remember, kindness goes a long way, so let's sprinkle it
-                    generously in our livechat, Have fun folks! 😊"
+                    "Let's keep the vibes positive and the conversation uplifting. Have fun folks! 😊"
                 </p>
             </div>
         </div>
