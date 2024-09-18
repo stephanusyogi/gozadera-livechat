@@ -704,6 +704,7 @@
                             background: linear-gradient(0deg, rgb(0 0 0), rgb(0 0 0 / 31%)),
                             url('{{ asset('uploads/' . $event->visitor_background_image) }}');
                             background-size: cover;
+                            background-position: center;
                         }
                     `;
                 document.head.appendChild(visitorBackground);
