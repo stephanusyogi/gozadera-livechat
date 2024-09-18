@@ -51,6 +51,10 @@
                 background: #202020!important;
             }
 
+            .form-control:focus{
+                border: 2px solid #202020!important;
+            }
+
         </style>
 
     
