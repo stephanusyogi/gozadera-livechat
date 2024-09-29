@@ -551,7 +551,9 @@ class EventController extends Controller
         // Validation
         $rules = [
             'email' => 'required|email',
+            'disclaimer_check' => 'accepted',
         ];
+
         if ($event->flag_table_security) {
             $rules['table'] = 'required|string';
 

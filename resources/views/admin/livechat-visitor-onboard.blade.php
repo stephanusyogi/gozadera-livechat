@@ -202,6 +202,43 @@
     .text-danger{
         color: red;
     }
+
+
+    /* Style the checkbox */
+    input[type="checkbox"] {
+        /* Remove default appearance */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 9px;
+        height: 7px;
+        border: 2px solid #ccc; /* Border color for unchecked state */
+        border-radius: 4px; /* Optional: give it rounded corners */
+        position: relative;
+        cursor: pointer;
+    }
+
+    /* Style for checked checkbox */
+    input[type="checkbox"]:checked {
+        background-color: #c88600; /* Background color when checked */
+        border-color: #c88600; /* Border color when checked */
+    }
+
+    /* Create a white checkmark when checked */
+    input[type="checkbox"]:checked::after {
+        content: '\2713'; /* Unicode for checkmark */
+        color: white; /* Checkmark color */
+        font-size: 10px;
+        position: absolute;
+        top: 1px;
+        left: 3px;
+    }
+
+    /* Optional: focus state for accessibility */
+    input[type="checkbox"]:focus {
+        outline: none;
+        box-shadow: 0 0 3px 2px rgba(200, 134, 0, 0.5); /* Focus shadow with the same color */
+    }
      /* Media Queries for Responsiveness */
      @media (max-width: 500px) {
         .login__input, .login__submit, .social-login{
@@ -261,6 +298,20 @@
                             @enderror
                         </div>
                     @endif
+                    <div class="login__field" style="font-size: 10px;color:#a3a3a3;">
+                        <div style="display:flex; gap: 0.5rem">
+                            <input type="checkbox" class="login__input" name="disclaimer_check" id="disclaimer_check">
+                            <label for="disclaimer_check">
+                                <p class="mb-0"><strong>Disclaimer!</strong></p>
+                                <p class="mb-0">I am responsible for any text I send through this platform.</p>
+                            </label>
+                        </div>
+                        @error('disclaimer_check')
+                            <small class="mt-2 text-danger float-start">
+                                {{ $message }}
+                            </small>
+                        @enderror
+                    </div>
                     <button class="button login__submit">
                         <span class="button__text">Start Livechat</span>
                         <i class="button__icon fas fa-chevron-right"></i>

@@ -20,7 +20,7 @@
                     
                     <li class="nav-item nav-author">
                         <a href="#" class="nav-toggler" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="{{ asset('images/user.png') }}" alt="img" width="54" class="rounded-2">
+                            <img src="{{ asset('images/logo_user.jpg') }}" alt="img" width="54" class="rounded-2">
                             <div class="nav-toggler-content">
                                 <h6 class="mb-0">{{ strlen($admin->name) > 15 ? substr($admin->name, 0, 15) . '...' : $admin->name }}</h6>
                                 <div class="ff-heading fs-14 fw-normal text-gray">{{ $admin->type }}</div>
@@ -30,7 +30,7 @@
                             <div class="dropdown-wrapper">
                                 <div class="card mb-0">
                                     <div class="card-header p-3 text-center">
-                                        <img src="{{ asset('images/user.png') }}" alt="img" width="80" class="rounded-circle avatar">
+                                        <img src="{{ asset('images/logo_user.jpg') }}" alt="img" width="80" class="rounded-circle avatar">
                                         <div class="mt-2">
                                             <h6 class="mb-0 lh-18">{{ strlen($admin->name) > 15 ? substr($admin->name, 0, 15) . '...' : $admin->name }}</h6>
                                             <div class="fs-14 fw-normal text-gray">{{ $admin->type }}</div>
@@ -70,24 +70,24 @@
                 <ul class="nav-elements d-flex align-items-center list-unstyled m-0 p-0">
                     <li class="nav-item nav-author px-3">
                         <a href="#" class="nav-toggler" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="{{ asset('images/user.png') }}" alt="img" width="40" class="rounded-2">
+                            <img src="{{ asset('images/logo_user.jpg') }}" alt="img" width="40" class="rounded-2">
                             <div class="nav-toggler-content">
-                                <h6 class="mb-0">Franklin Jr.</h6>
-                                <div class="ff-heading fs-14 fw-normal text-gray">Super Admin</div>
+                                <h6 class="mb-0">{{ strlen($admin->name) > 15 ? substr($admin->name, 0, 15) . '...' : $admin->name }}</h6>
+                                <div class="ff-heading fs-14 fw-normal text-gray">{{ $admin->type }}</div>
                             </div>
                         </a>
                         <div class="dropdown-widget dropdown-menu p-0 admin-card">
                             <div class="dropdown-wrapper">
                                 <div class="card mb-0">
                                     <div class="card-header p-3 text-center">
-                                        <img src="{{ asset('images/user.png') }}" alt="img" width="60" class="rounded-circle avatar">
+                                        <img src="{{ asset('images/logo_user.jpg') }}" alt="img" width="60" class="rounded-circle avatar">
                                         <div class="mt-2">
-                                            <h6 class="mb-0 lh-18">Franklin Jr.</h6>
-                                            <div class="fs-14 fw-normal text-gray">Super Admin</div>
+                                            <h6 class="mb-0 lh-18">{{ strlen($admin->name) > 15 ? substr($admin->name, 0, 15) . '...' : $admin->name }}</h6>
+                                            <div class="fs-14 fw-normal text-gray">{{ $admin->type }}</div>
                                         </div>
                                     </div>
                                     <div class="card-footer p-3">
-                                        <a href="#" class="btn btn-outline-gray bg-transparent w-100 py-1 rounded-1 text-dark fs-14 fw-medium"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                                        <a href="{{ route('logout') }}" class="btn btn-outline-gray bg-transparent w-100 py-1 rounded-1 text-dark fs-14 fw-medium"><i class="bi bi-box-arrow-right"></i> Logout</a>
                                     </div>
                                 </div>
                             </div>
