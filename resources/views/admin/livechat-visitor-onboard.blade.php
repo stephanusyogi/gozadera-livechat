@@ -210,6 +210,7 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
+        padding: 7px;
         width: 9px;
         height: 7px;
         border: 2px solid #ccc; /* Border color for unchecked state */
