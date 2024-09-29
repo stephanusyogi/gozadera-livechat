@@ -204,31 +204,27 @@
     }
 
 
-    /* Style the checkbox */
     input[type="checkbox"] {
-        /* Remove default appearance */
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
         padding: 7px;
         width: 9px;
         height: 7px;
-        border: 2px solid #ccc; /* Border color for unchecked state */
-        border-radius: 4px; /* Optional: give it rounded corners */
+        border: 2px solid #ccc;
+        border-radius: 4px;
         position: relative;
         cursor: pointer;
     }
 
-    /* Style for checked checkbox */
     input[type="checkbox"]:checked {
-        background-color: #c88600; /* Background color when checked */
-        border-color: #c88600; /* Border color when checked */
+        background-color: #c88600; 
+        border-color: #c88600; 
     }
 
-    /* Create a white checkmark when checked */
     input[type="checkbox"]:checked::after {
-        content: '\2713'; /* Unicode for checkmark */
-        color: white; /* Checkmark color */
+        content: '\2713';
+        color: white;
         font-size: 10px;
         position: absolute;
         top: 1px;
