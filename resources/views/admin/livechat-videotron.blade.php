@@ -26,6 +26,13 @@
         font-family: "Poppins", sans-serif;
     }
 
+    #chat-container{
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
     .speech-wrapper {
         padding: 10px 20px;
     }
@@ -163,10 +170,11 @@
                 cluster: '{{ env('PUSHER_APP_CLUSTER') }}',
                 forceTLS: true
             });
+            
 
-            var channel = pusher.subscribe('chat-' + '{{ $event->id }}');
-
-            channel.bind('message.sent', function(data) {
+            var channelUpdate = pusher.subscribe('chatUpdate-' + '{{ $event->id }}');
+            
+            channelUpdate.bind('message.updateAdmin', function(data) {
                 renderMessage(data.message);
                 scrollToBottom();
             });
@@ -196,7 +204,7 @@
                             response.messages.forEach(function(message) {
                                 renderMessage(message);
                             });
-                            scrollToBottom();
+                            // scrollToBottom();
                         }
                     },
                     error: function() {

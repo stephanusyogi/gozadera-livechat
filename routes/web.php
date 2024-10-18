@@ -63,6 +63,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/all-event/event/all-chat/{id}', [EventController::class, 'all_chat'])->name('all-event.event-all-chat');
     Route::get('/all-event/event/all-chat/delete/{id}', [EventController::class, 'all_chat_delete'])->name('all-event.event-all-chat-delete');
+    Route::post('/all-event/event/all-chat/status/{id}', [EventController::class, 'all_chat_status'])->name('all-event.event-all-chat-status');
 
     Route::get('/all-event/event/demo/videotron/{id}', [EventController::class, 'demo_videotron'])->name('all-event.demo-videotron');
     Route::get('/all-event/event/demo/visitor/{id}', [EventController::class, 'demo_visitor'])->name('all-event.demo-visitor');

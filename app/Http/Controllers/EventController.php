@@ -511,7 +511,7 @@ class EventController extends Controller
             ], 500);
         }
 
-        $messages = Messages::where('id_event', $id)->orderBy('created_at', 'asc')->get();
+        $messages = Messages::where('id_event', $id)->where('status', 'APPROVED')->orderBy('created_at', 'asc')->get();
 
         return response()->json(['messages' => $messages], 200);
     }
@@ -628,6 +628,7 @@ class EventController extends Controller
 
         $messages = Messages::where('sender_unique_char', $randomStringSender)
             ->where('id_event', $id)
+            ->where('status', 'APPROVED')
             ->orderBy('created_at', 'asc')->get();
 
         return response()->json(['messages' => $messages], 200);
@@ -690,6 +691,7 @@ class EventController extends Controller
         $message->sender_email = $senderEmail;
         $message->content = $content;
         $message->ip_address = $request->ip();
+        $message->status = 'PENDING';
 
         Session::put('senderName', $senderName);
 
@@ -800,11 +802,23 @@ class EventController extends Controller
             ]);
         }
 
-        $messages = Messages::where('id_event', $id)->orderBy('created_at', 'asc')->get();
+        $messages = Messages::where('id_event', $id)->orderBy('created_at', 'desc')->get();
 
         
         if (request()->ajax()) {
-            $messages = Messages::where('id_event', $id)->orderBy('created_at', 'asc')->get();
+            $statusFilter = request('status');
+
+            // Query the messages for the given event
+            $messages = Messages::where('id_event', $id);
+    
+            // If a status filter is provided, add a 'where' condition
+            if (!empty($statusFilter)) {
+                $messages = $messages->where('status', $statusFilter);
+            }
+    
+            // Order the messages and get them
+            $messages = $messages->orderBy('created_at', 'desc')->get();
+
             return DataTables::of($messages)
                 ->addIndexColumn()
                 ->addColumn('action', function ($item) {
@@ -814,10 +828,16 @@ class EventController extends Controller
 
                     if (!$item->deleted_at) {
                         $action .= '
-                         <a onclick="deleteMessage(event,this)" href="'.route('all-event.event-all-chat-delete', $item->id).'"
-                            class="btn btn-danger btn-sm text-white" data-toggle="tooltip" data-placement="top" title="Delete This Item">
-                            <i class="bi bi-trash-fill" style="margin-right:unset!important;"></i>
-                        </a>';
+                            <a onclick="deleteMessage(event,this)" href="'.route('all-event.event-all-chat-delete', $item->id).'"
+                                class="btn btn-danger btn-sm text-white" data-toggle="tooltip" data-placement="top" title="Delete This Item">
+                                <i class="bi bi-trash-fill" style="margin-right:unset!important;"></i>
+                            </a>
+                            <br>
+                            <button type="button" onclick="changeStatusMessage(event,this)" href="'.route('all-event.event-all-chat-status', $item->id).'"
+                                class="btn btn-info btn-sm text-white" data-toggle="tooltip" data-placement="top" title="Change Status This Item">
+                                <i class="bi bi-envelope-check-fill" style="margin-right:unset!important;"></i>
+                            </button>
+                        ';
                     }else{
                         $action .= '-';
                     }
@@ -829,6 +849,23 @@ class EventController extends Controller
                 ->addColumn('table_name', function ($item) {
                     return $item->table ? $item->table->name : 'N/A';
                 })
+                ->addColumn('status', function ($item) {
+                    if ($item->status === 'PENDING') {
+                        $status = '
+                            <button type="button" class="btn btn-warning btn-sm text-white">PENDING</button>
+                        ';
+                    } else if ($item->status === 'APPROVED'){
+                        $status = '
+                            <button type="button" class="btn btn-success btn-sm text-white">APPROVED</a>
+                        ';
+                    } else {
+                        $status = '
+                            <button type="button" class="btn btn-danger btn-sm text-white">DISAPPROVED</a>
+                        ';
+                    }
+                    return $status;
+                })
+                ->rawColumns(['action', 'status'])
                 ->make();
         }
 
@@ -857,6 +894,48 @@ class EventController extends Controller
             return redirect()->back()->with('success_flash', 'Message Deleted!');
         } else {
             return redirect()->back()->with('error_flash', 'Message Not Found.');
+        }
+    }
+
+    public function all_chat_status($id, Request $request){
+        $message = Messages::find($id);
+
+        if ($message) {
+            // Update the message status with the input from the request
+            $message->status = $request->input('status');
+            $message->save();
+
+            if ($request->input('status') === 'APPROVED') {
+                // Pusher
+                $options = [
+                    'cluster' => 'ap1',
+                    'useTLS' => true,
+                ];
+                $pusher = new Pusher(
+                    env('PUSHER_APP_KEY'),
+                    env('PUSHER_APP_SECRET'),
+                    env('PUSHER_APP_ID'),
+                    $options
+                );
+        
+                // Send real-time update with Pusher
+                // $data['message'] = "Status Updated to " . $message->status;
+                $data['message'] = $message;
+                $pusher->trigger('chatUpdate-' . $message->id_event, 'message.updateAdmin', $data);
+            }
+    
+            // Return success response
+            return response()->json([
+                'status' => true,
+                'message' => "Message status updated successfully!",
+                'updated_status' => $message->status
+            ]);
+        } else {
+            // Return failure response
+            return response()->json([
+                'status' => false,
+                'message' => "Message not found!",
+            ]);
         }
     }
 

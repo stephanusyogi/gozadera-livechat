@@ -174,6 +174,9 @@
         height: 50vh;
         overflow-y: scroll;
         overflow-x: hidden;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
     }
 
     .chat__conversation-wrapper::-webkit-scrollbar-track {
@@ -192,10 +195,10 @@
 
     .speech-wrapper {
         padding: 10px 20px;
-        float: right;
     }
 
     .speech-wrapper .bubble {
+        float: right;
         width: 280px;
         letter-spacing: 1px;
         height: auto;
@@ -395,7 +398,7 @@
         <div class="chat__conversation-panel">
             <div class="chat__conversation-sender_container">
                 <div class="chat__conversation-sender">
-                    <p>Hello, <strong><span id="senderName">{{ Session::has('senderName') ? Session::get('senderName') : 'Name Sender' }}</span></strong>
+                    <p>Hello, <strong><span id="senderName">{{ Session::has('senderName') ? Session::get('senderName') : 'Gozadera La Familia' }}</span></strong>
                     </p>
                     <div class="sender__action">
                         <a onclick="changeName(event, this)" href="javascript:void(0)">Change Name Sender Here</a>
@@ -469,6 +472,17 @@
                     return response.json();
                 })
                 .then(data => {
+                    swal({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        showCloseButton: false,
+                        allowEscapeKey: false,
+                        type: 'info',
+                        timer: 5000,
+                        title: 'Success! Your message has been sent. Please wait a moment; it will be displayed soon.',
+                    });
+
                     getMessagesSender();
                     form.reset();
                 })
@@ -684,6 +698,13 @@
         var channel = pusher.subscribe('chatDelete-' + '{{ $event->id }}');
 
         channel.bind('message.delete', function(data) {
+            getMessagesSender();
+            scrollToBottom();
+        });
+
+        var channelUpdate = pusher.subscribe('chatUpdate-' + '{{ $event->id }}');
+
+        channelUpdate.bind('message.updateAdmin', function(data) {
             getMessagesSender();
             scrollToBottom();
         });
