@@ -26,12 +26,12 @@
         font-family: "Poppins", sans-serif;
     }
 
-    #chat-container{
+    /* #chat-container{
         display: flex;
         justify-content: flex-end;
         flex-direction: column;
         min-height: 100vh;
-    }
+    } */
 
     .speech-wrapper {
         padding: 10px 20px;
