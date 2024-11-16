@@ -174,9 +174,9 @@
         height: 50vh;
         overflow-y: scroll;
         overflow-x: hidden;
-        display: flex;
+        /* display: flex;
         justify-content: flex-end;
-        flex-direction: column;
+        flex-direction: column; */
     }
 
     .chat__conversation-wrapper::-webkit-scrollbar-track {
@@ -195,6 +195,7 @@
 
     .speech-wrapper {
         padding: 10px 20px;
+        float: right;
     }
 
     .speech-wrapper .bubble {
